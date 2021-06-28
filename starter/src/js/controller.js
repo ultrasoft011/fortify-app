@@ -30,10 +30,10 @@ const getRecipe = async function () {
       sourceUrl: recipe.source_url,
       serving: recipe.servings,
       ingredients: recipe.ingredients,
-      cookingTime: recipe.cookingTime,
+      cookingTime: recipe.cooking_time,
     };
-    console.log(recipe);
-    // console.log(data.data);
+    // console.log(recipe);
+    console.log(data.data);
 
     // 2. Render the information
 
@@ -57,8 +57,8 @@ const getRecipe = async function () {
           <svg class="recipe__info-icon">
             <use href="src/img/icons.svg#icon-users"></use>
           </svg>
-          <span class="recipe__info-data recipe__info-data--people">4</span>
-          <span class="recipe__info-text">${recipe.serving}</span>
+          <span class="recipe__info-data recipe__info-data--people">${recipe.serving}</span>
+          <span class="recipe__info-text">servings</span>
 
           <div class="recipe__info-buttons">
             <button class="btn--tiny btn--increase-servings">
@@ -132,7 +132,7 @@ const getRecipe = async function () {
         </a>
       </div>
   `;
-  recipeContainer.insertAdjacentHTML('afterbegin', recipeRender);
+    recipeContainer.insertAdjacentHTML('afterbegin', recipeRender);
   } catch (err) {
     console.log(err);
   }
