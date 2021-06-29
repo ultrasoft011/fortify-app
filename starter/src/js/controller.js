@@ -167,4 +167,8 @@ const getRecipe = async function () {
   }
 };
 
-window.addEventListener('hashchange', getRecipe);
+// Using forEach to make one line code, create an array with the events and add the forEach method
+['hashchange', 'load'].forEach(element => window.addEventListener(element, getRecipe));
+// The line 171 is the same as 173 and 174
+// window.addEventListener('hashchange', getRecipe);
+// window.addEventListener('load', getRecipe);
