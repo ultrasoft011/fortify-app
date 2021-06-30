@@ -1,3 +1,6 @@
+// Import everything that is on the model.js file
+import * as model from './model';
+
 import icons from 'url:../img/icons.svg';
 console.log(icons);
 
@@ -31,9 +34,20 @@ const getRecipe = async function () {
   try {
     const id = window.location.hash.slice(1);
     console.log(id);
+    
+    // Guard clause to avoid the error when the id is false, id has not a value
+    if (!id) return;
+
     // 1. Fetching data
     // Loading the spinner
+    await model.loadRecipe(id)
+
+
+
+
     renderSpinner(recipeContainer);
+
+
     const res = await fetch(
       `https://forkify-api.herokuapp.com/api/v2/recipes/${id}`
     );
